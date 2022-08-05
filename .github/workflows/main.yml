@@ -24,7 +24,7 @@ jobs:
       - name: List the content
         run: |
           ls -la
-
+          cat results.txt
       # - name: Branch name
       #   run: echo running on branch ${{ github.head_ref }}
       # - name: Check Apache syntax
