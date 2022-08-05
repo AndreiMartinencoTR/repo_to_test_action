@@ -1,6 +1,6 @@
 #on: [push, pull_request]
 name: CI
-on: push
+on: pull_request
 #on: push
 jobs:
   build:
@@ -9,6 +9,7 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v3
         with:
+<<<<<<< HEAD
           repository: AndreiMartinencoTR/repo_to_test_action
           ref: some_branch
 
@@ -21,3 +22,8 @@ jobs:
       #     branch-name: ${{ github.head_ref }}
       # - name: Get the output branch
       #   run: echo "The output from the script ${{ steps.script_result.outputs.result }}"
+=======
+          branch-name: ${{ github.head_ref }}
+      - name: Get the output branch
+        run: echo "The output from the script ${{ steps.script_result.outputs.result }}"
+>>>>>>> 788140487f047d9ed085cc69c84bee15d866652c
