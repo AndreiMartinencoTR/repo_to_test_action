@@ -1,0 +1,19 @@
+#on: [push, pull_request]
+name: CI
+on: push
+#on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+      - name: Branch name
+        run: echo running on branch ${{ github.head_ref }}
+      - name: Check Apache syntax
+        id: script_result
+        uses: ./
+        with:
+          branch-name: ${{ github.head_ref }}
+      - name: Get the output branch
+        run: echo "The output from the script ${{ steps.script_result.outputs.result }}"
