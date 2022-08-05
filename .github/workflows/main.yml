@@ -16,6 +16,14 @@ jobs:
           ls -la
           cat ./README.md
           ls -la
+      - name: Check Apache syntax
+        id: script_result
+        uses: AndreiMartinencoTR/check_apache_syntax@v1
+        with:
+          branch-name: ${{ github.head_ref }}
+      - name: List the content
+        run: |
+          ls -la
 
       # - name: Branch name
       #   run: echo running on branch ${{ github.head_ref }}
