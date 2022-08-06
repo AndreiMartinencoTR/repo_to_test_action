@@ -23,18 +23,18 @@ jobs:
       - name: Run docker compose
         run: |
           ls -la
-          action_script="./.github/scripts/action_script.sh"
-          if [ ! -f "$action_script" ]
+          action_script_bash=".github/scripts/action_script.sh"
+          if [ ! -f "$action_script_bash" ]
           then
-            echo "ERROR - There is no $action_script"
+            echo "ERROR - There is no $action_script_bash"
           else
-            bash $action_script
+            bash $action_script_bash
           fi
 
-      - name: Create mnt folder
-        run: |
-          mkdir ./mnt
-          cp README.md ./mnt
+      # - name: Create mnt folder
+      #   run: |
+      #     mkdir ./mnt
+      #     cp README.md ./mnt
 
 
 
