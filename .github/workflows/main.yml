@@ -32,6 +32,11 @@ jobs:
         run: |
           mkdir ./mnt
           cp README.md ./mnt
+          ls -l ./mnt
+          echo '--'
+          ls -l /etc/httpd/mnt
+
+
 
       # - name: Check Apache syntax
       #   id: script_result
