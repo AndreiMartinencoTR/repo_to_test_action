@@ -19,6 +19,7 @@ jobs:
           ls -la
 
       - name: Run docker compose
+        uses: actions/checkout@v3
         run: |
           action_script=".github/scripts/action_script.sh"
           if [ ! -f "$action_script" ]
