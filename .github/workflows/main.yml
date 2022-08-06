@@ -12,16 +12,17 @@ jobs:
           repository: AndreiMartinencoTR/repo_to_test_action
           ref: main
       
-      - name: Read the README
-        run: |
-          ls -la
-          cat ./README.md
-          ls -la
+      # - name: Read the README
+      #   run: |
+      #     ls -la
+      #     cat ./README.md
+      #     ls -la
       
       - name: checkout
         uses: actions/checkout@v3
       - name: Run docker compose
         run: |
+          pwd
           action_script=".github/scripts/action_script.sh"
           if [ ! -f "$action_script" ]
           then
