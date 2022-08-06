@@ -19,8 +19,8 @@ jobs:
       - name: Check Apache syntax
         id: script_result
         uses: AndreiMartinencoTR/check_apache_syntax@v1
-        with:
-          branch-name: ${{ github.head_ref }}
+        #with:
+        #  branch-name: ${{ github.head_ref }}
       - name: List the content
         run: |
           ls -la
