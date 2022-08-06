@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker compose build
-docker compose up -d 
+docker compose -f .github/scripts/docker-compose.yml build
+docker compose -f .github/scripts/docker-compose.yml up -d 
