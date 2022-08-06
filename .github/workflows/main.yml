@@ -11,20 +11,42 @@ jobs:
         with:
           repository: AndreiMartinencoTR/repo_to_test_action
           ref: main
+      
       - name: Read the README
         run: |
           ls -la
           cat ./README.md
           ls -la
-      - name: Check Apache syntax
-        id: script_result
-        uses: AndreiMartinencoTR/check_apache_syntax@v1
+
+      - name: Run docker compose
+        run: |
+          action_script=".github/scripts/action_script.sh"
+          if [ ! -f "$action_script" ]
+          then
+            echo "ERROR - There is no $action_script"
+          else
+            bash $action_script
+          fi
+
+      - name: Create mnt folder
+        run: |
+          mkdir ./mnt
+          cp README.md ./mnt
+
+      # - name: Check Apache syntax
+      #   id: script_result
+      #   uses: AndreiMartinencoTR/check_apache_syntax@v1
+        
         #with:
         #  branch-name: ${{ github.head_ref }}
-      - name: List the content
-        run: |
-          ls -la
-          cat results.txt
+      
+      
+      # - name: List the content
+      #   run: |
+      #     ls -la
+      #     cat results.txt
+
+
       # - name: Branch name
       #   run: echo running on branch ${{ github.head_ref }}
       # - name: Check Apache syntax
