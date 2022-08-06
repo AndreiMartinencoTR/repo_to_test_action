@@ -32,9 +32,6 @@ jobs:
         run: |
           mkdir ./mnt
           cp README.md ./mnt
-          ls -l ./mnt
-          echo '--'
-          ls -l /etc/httpd/
 
 
 
