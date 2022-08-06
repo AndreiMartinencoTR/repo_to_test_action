@@ -34,7 +34,7 @@ jobs:
           cp README.md ./mnt
           ls -l ./mnt
           echo '--'
-          ls -l /etc/httpd/mnt
+          ls -l /etc/httpd/
 
 
 
