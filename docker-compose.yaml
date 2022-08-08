@@ -5,7 +5,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./mount:/mount:rw
+      - ./mount:/etc/httpd/mount:rw
     # - ./modules:/etc/httpd/modules:ro
     #environment:
       # - ENV_VAR=value
