@@ -1,7 +1,7 @@
 services:
   httpd:
     platform: linux/amd64
-    build: .
+    build: ./.github/scripts
     ports:
       - 8080:80
     volumes:
