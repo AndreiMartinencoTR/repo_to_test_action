@@ -1,11 +1,11 @@
 services:
   httpd:
     platform: linux/amd64
-    build: ./.github/scripts
+    build: .
     ports:
       - 8080:80
     volumes:
-      - ./mount:/etc/httpd/:rw
+      - ./mount:/mount:rw
     # - ./modules:/etc/httpd/modules:ro
     #environment:
       # - ENV_VAR=value
