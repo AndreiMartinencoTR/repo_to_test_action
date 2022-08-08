@@ -19,7 +19,10 @@ jobs:
       #     ls -la
       - name: See what is inside
         run: |
-          ls -la      
+          ls -la
+          mkdir ./mnt
+          cp -r ./somefolder ./mnt
+          ls -la ./mnt/     
 
       - name: checkout
         uses: actions/checkout@v3
