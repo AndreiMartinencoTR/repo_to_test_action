@@ -1,0 +1,18 @@
+services:
+  httpd:
+    platform: linux/amd64
+    build: ./.github/scripts
+    ports:
+      - 8080:80
+    volumes:
+      - ./mnt:/etc/httpd/mnt:rw
+    # - ./modules:/etc/httpd/modules:ro
+    #environment:
+      # - ENV_VAR=value
+    #env_file:
+    #  - httpd.env
+    networks:
+      - backend
+
+networks:
+  backend:
