@@ -24,18 +24,22 @@ jobs:
           cp -r ./somefolder ./mnt
           ls -la ./mnt/     
 
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: Run docker compose
-        run: |
-          ls -la .github
-          action_script_bash=".github/scripts/action_script.sh"
-          if [ ! -f "$action_script_bash" ]
-          then
-            echo "ERROR - There is no $action_script_bash"
-          else
-            bash $action_script_bash
-          fi
+      - name: Check Apache syntax
+        id: check_syntax_result
+        uses: AndreiMartinencoTR/check_apache_syntax@v1
+
+      # - name: checkout
+      #   uses: actions/checkout@v3
+      # - name: Run docker compose
+      #   run: |
+      #     ls -la .github
+      #     action_script_bash=".github/scripts/action_script.sh"
+      #     if [ ! -f "$action_script_bash" ]
+      #     then
+      #       echo "ERROR - There is no $action_script_bash"
+      #     else
+      #       bash $action_script_bash
+      #     fi
 
       # - name: Create mnt folder
       #   run: |
