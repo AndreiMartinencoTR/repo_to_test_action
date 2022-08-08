@@ -5,7 +5,7 @@
 # echo "::set-output name=result::$1"
 
 echo "Running inside docker"
-ls -la 
+
 
 # while :
 # do
