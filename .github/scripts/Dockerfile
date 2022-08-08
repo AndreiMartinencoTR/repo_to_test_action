@@ -5,5 +5,5 @@ COPY ./docker-entrypoint.sh /
 RUN ls -la 
 #COPY ../../somefolder /tmp/downloaded_branch
 #RUN ls -la /tmp/downloaded_branch/*
-RUN ["chmod", "+x", "/entrypoint.sh"]
+RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 ENTRYPOINT [ "/bin/bash", "/docker-entrypoint.sh" ]
