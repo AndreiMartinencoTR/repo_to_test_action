@@ -1,9 +1,11 @@
 #!/bin/sh -l
 
-echo "Shell Script: Working with branch $1"
-echo "HELLO WORLD!!!" > ./results.txt
-echo "::set-output name=result::$1"
+# echo "Shell Script: Working with branch $1"
+# echo "HELLO WORLD!!!" > ./results.txt
+# echo "::set-output name=result::$1"
 
+echo "Running inside docker"
+ls -la /etc/httpd/
 
 # while :
 # do
