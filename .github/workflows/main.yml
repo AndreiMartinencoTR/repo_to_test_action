@@ -40,6 +40,17 @@ jobs:
             bash $action_script_bash
           fi
 
+      - name: Check for errors
+        run: |
+          error_output_file="./mount/error.txt"
+          if [ ! -f "$error_output_file" ]
+          then
+            echo "No errors occured during syntax check"
+          else
+            exit 1
+          fi
+      
+
       # - name: Create mnt folder
       #   run: |
       #     mkdir ./mnt
