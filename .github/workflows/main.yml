@@ -24,9 +24,9 @@ jobs:
           cp -r ./somefolder ./mnt
           ls -la ./mnt/     
 
-      # - name: Check Apache syntax
-      #   id: check_syntax_result
-      #   uses: AndreiMartinencoTR/check_apache_syntax@v1
+      - name: Check Apache syntax
+        id: check_syntax_result
+        uses: AndreiMartinencoTR/check_apache_syntax@v1
 
       # - name: checkout
       #   uses: actions/checkout@v3
