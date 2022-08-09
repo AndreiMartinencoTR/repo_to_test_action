@@ -43,15 +43,13 @@ jobs:
       - name: Check for errors
         run: |
           error_output_file="./mount/error.txt"
-          cat ./mount/error.txt
-          if [ ! -f "$error_output_file" ]
+          syntax_check=$(tail -1 $error_output_file | grep -q "Syntax OK")
+          syntax_check_result=$?
+          if [ ! $syntax_check_result == 0 ]
           then
-            echo "No errors occured during syntax check"
-          else
             exit 1
-          fi
+          fi 
       
-
       # - name: Create mnt folder
       #   run: |
       #     mkdir ./mnt
