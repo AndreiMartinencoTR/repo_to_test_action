@@ -7,6 +7,6 @@ RUN mkdir /mount
 RUN ls -la /mount
 #COPY ../../somefolder /tmp/downloaded_branch
 #RUN ls -la /tmp/downloaded_branch/*
-RUN echo "apsdmadkns" >> /etc/httpd/conf/httpd.conf
+#RUN echo "apsdmadkns" >> /etc/httpd/conf/httpd.conf
 RUN ["chmod", "+x", "/docker-entrypoint.sh"]
 ENTRYPOINT [ "/bin/bash", "/docker-entrypoint.sh" ]
