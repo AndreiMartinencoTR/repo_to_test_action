@@ -1,5 +1,5 @@
 FROM centos:centos7
-RUN yum install -y httpd
+RUN yum install -y httpd python3
 COPY ./docker-entrypoint.sh /
 #RUN pwd
 RUN ls -la

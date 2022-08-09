@@ -6,6 +6,8 @@
 
 #echo "Running inside docker"
 
+echo *** Test python ***
+python3 /mount/somefolder/src/index.py
 
 # while :
 # do
