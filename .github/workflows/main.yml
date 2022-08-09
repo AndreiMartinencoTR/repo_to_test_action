@@ -47,6 +47,7 @@ jobs:
           syntax_check_result=$?
           if [ ! $syntax_check_result == 0 ]
           then
+            tail -40 $error_output_file
             exit 1
           fi 
       
