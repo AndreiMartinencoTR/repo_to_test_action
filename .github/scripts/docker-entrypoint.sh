@@ -7,12 +7,14 @@
 #echo "Running inside docker"
 
 echo *** Test python ***
-python3 /mount/somefolder/src/index.py
+python3 /mount/somefolder/src/index.py > /mount/error.txt
 
 # while :
 # do
-echo *** Test apache config ***
-/usr/sbin/httpd -t > /dev/null 2> /mount/error.txt
+
+
+# echo *** Test apache config ***
+# /usr/sbin/httpd -t > /dev/null 2> /mount/error.txt
 
     # echo *** Start apache ***
     # /usr/sbin/httpd -D FOREGROUND
